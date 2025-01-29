@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+            /*  transform: translate(200px, 100px);*/
+            /*  transform: rotate(45deg); */
+            /*deg signifca grados para rotar, osea que la pieza se mueve*/
+            /*transform: scale(1.5,2);*/
+            /*transform: translate(200px, 100px) skew(20deg, 10deg) rotate(45deg) scale(1.5,2);*/
+            /* transition-property: transform 0,5 ease;*/
+
+            /*animation-duration: 0,5;
+          animation-timing-function: ease;
+          animation-delay: 0,5;
+          animation-iteration-count: infinite;
+          animation-direction: normal;
+          animation-fill-mode: none;
+          animation: alternate;*/
+            transition: tranform 0, 5s ease;
+            animation-name: cambiarPosicion;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation: cambiarPosicion 2s infinite alternate;
+
+        }
+
+        @keyframes cambiarPosicion {
+
+            /*  0% {background-color:blue}
+            50%{background-color: green}
+            100%{background-color: white}*/
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-50px);
+            }
+        }
+
+        .box:hover {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+</body>
+
+</html>
